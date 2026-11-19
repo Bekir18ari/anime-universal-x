@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anime Universal X</title>
+<meta name="description" content="Anime Universal X: Roblox hesap yöneticisi ve hızlı giriş. Windows için ücretsiz indir.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #0a0908; --panel: #12100e; --panel-2: #17120c; --line: #2a2521;
+    --text: #f5f2ed; --muted: #a8a099; --accent: #fbb21d; --ink: #1c1205; --red: #ea403a; --green: #4ade80;
+    --grad: linear-gradient(to right, #fdca10 0%, #f2873f 50%, #ea403a 100%);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif; background: var(--void); color: var(--text);
+    -webkit-font-smoothing: antialiased; line-height: 1.6; min-height: 100vh;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1;
+    background:
+      radial-gradient(800px 420px at 15% -10%, rgba(251, 178, 29, .13), transparent 70%),
+      radial-gradient(700px 460px at 100% 0%, rgba(234, 64, 58, .08), transparent 70%);
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .02em; }
+  .brand img { height: 40px; width: auto; }
+  .tag { font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--accent); background: rgba(251,178,29,.1); border: 1px solid rgba(251,178,29,.25); padding: 4px 12px; border-radius: 999px; }
+
+  .hero { padding: 56px 0 40px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+  .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .14em; font-size: 13px; text-transform: uppercase; }
+  h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.05; margin: 10px 0 16px; font-weight: 800; letter-spacing: -.02em; }
+  h1 span { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { color: var(--muted); font-size: 17px; max-width: 520px; margin: 0 0 28px; }
+
+  .download { display: inline-flex; align-items: center; gap: 12px; background: var(--grad); color: var(--ink); font-weight: 700; font-size: 18px;
+    padding: 16px 28px; border-radius: 999px; text-decoration: none; box-shadow: 0 12px 40px rgba(242, 135, 63, .25); transition: transform .15s, box-shadow .15s; }
+  .download:hover { transform: translateY(-2px); box-shadow: 0 16px 48px rgba(242, 135, 63, .35); }
+  .download svg { width: 22px; height: 22px; }
+  .meta { color: var(--muted); font-size: 13px; margin-top: 14px; min-height: 1.6em; }
+  .meta b { color: var(--text); font-weight: 600; }
+
+  .card { background: linear-gradient(180deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+  .hero .card img { width: 100%; height: auto; display: block; }
+
+  section { padding: 36px 0; }
+  h2 { font-size: 26px; margin: 0 0 18px; font-weight: 700; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .feature h3 { margin: 0 0 6px; font-size: 16px; }
+  .feature p { margin: 0; color: var(--muted); font-size: 14px; }
+  .feature .ic { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: rgba(251,178,29,.12); color: var(--accent); margin-bottom: 12px; font-size: 18px; }
+
+  ol.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; counter-reset: s; }
+  ol.steps li { counter-increment: s; display: flex; gap: 14px; align-items: flex-start; }
+  ol.steps li::before { content: counter(s); flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--grad); color: var(--ink); font-weight: 800; display: grid; place-items: center; }
+  ol.steps p { margin: 4px 0 0; }
+  .muted { color: var(--muted); }
+  code, kbd { background: #1f1a15; border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: .92em; }
+
+  .notes { white-space: pre-wrap; color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+  .note { border-left: 3px solid var(--accent); padding: 10px 14px; background: rgba(251,178,29,.06); border-radius: 0 12px 12px 0; color: var(--muted); font-size: 14px; }
+  details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { color: var(--muted); margin: 8px 0 0; }
+  footer { color: var(--muted); font-size: 13px; padding: 40px 0 50px; text-align: center; }
+
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; padding-top: 28px; gap: 28px; }
+    .grid { grid-template-columns: 1fr; }
+    .download { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><img src="logo.png" alt="Anime Universal X"></div>
+      <span class="tag">WINDOWS</span>
+    </header>
+
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Roblox hesap yöneticisi</div>
+        <h1>Tüm hesapların, <span>tek tıkla oyunda.</span></h1>
+        <p class="lead">Hesaplarını ekle, oyunu seç, hepsini aynı anda aç. Çoklu Roblox, hızlı giriş kısayolları, performans modları ve otomatik güncellemeler.</p>
+        <a class="download" id="dl" href="https://github.com/Bekir18ari/anime-universal-x/releases/latest/download/AnimeUniversalX-Windows.zip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Windows için indir
+        </a>
+        <div class="meta" id="meta">Son sürüm yükleniyor…</div>
+      </div>
+      <div class="card"><img src="logo.png" alt=""></div>
+    </div>
+
+    <section>
+      <h2>Neler var?</h2>
+      <div class="grid">
+        <div class="card feature"><div class="ic">⚡</div><h3>Hızlı giriş</h3><p>Hesaplarını bir kez ekle, istediğin oyuna tek tıkla gir. Masaüstüne direkt oyuna giren kısayollar oluştur.</p></div>
+        <div class="card feature"><div class="ic">👥</div><h3>Çoklu Roblox</h3><p>Birden fazla hesabı aynı anda aç, aynı sunucuya topluca gir.</p></div>
+        <div class="card feature"><div class="ic">🪶</div><h3>Performans modları</h3><p>AFK ve Ultra modlarıyla her Roblox penceresi çok daha az RAM ve işlemci kullanır.</p></div>
+        <div class="card feature"><div class="ic">🛡️</div><h3>Anti-AFK ve geri giriş</h3><p>Oyundan atılınca ya da Roblox çökünce otomatik geri sokar.</p></div>
+        <div class="card feature"><div class="ic">🔒</div><h3>Veriler sende</h3><p>Hesap bilgileri sadece senin bilgisayarında, Windows şifrelemesiyle saklanır.</p></div>
+        <div class="card feature"><div class="ic">🔄</div><h3>Otomatik güncelleme</h3><p>Yeni sürüm çıkınca uygulama kendisi indirir; yeniden başlatınca kurulur.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Nasıl kurulur?</h2>
+      <div class="card">
+        <ol class="steps">
+          <li><div><b>İndir</b><p class="muted">Yukarıdaki “Windows için indir” butonuna bas.</p></div></li>
+          <li><div><b>Zip’i çıkar</b><p class="muted">İnen dosyaya sağ tıkla → <b>Tümünü ayıkla</b>. Klasörü Masaüstüne ya da Belgeler’e koyabilirsin (Program Files’a koyma, otomatik güncelleme çalışmaz).</p></div></li>
+          <li><div><b>Çalıştır</b><p class="muted">Klasördeki <code>Anime Universal X.exe</code> dosyasını aç. İstersen sağ tık → Gönder → Masaüstü (kısayol oluştur).</p></div></li>
+        </ol>
+        <p class="note" style="margin-top:18px">Windows “Bilgisayarınız korundu” derse: <b>Ek bilgi</b> → <b>Yine de çalıştır</b>. Uygulama imzalı olmadığı için bu uyarı çıkıyor.</p>
+      </div>
+    </section>
+
+    <section id="notesBox" hidden>
+      <h2>Son sürümde neler yeni?</h2>
+      <div class="card"><b id="notesTitle"></b><p class="notes" id="notes"></p></div>
+    </section>
+
+    <section>
+      <h2>Sık sorulanlar</h2>
+      <details><summary>Güncellemeleri tekrar indirmem gerekiyor mu?</summary><p>Hayır. Uygulama açıkken yeni sürümleri kendisi kontrol eder ve indirir. Ayarlar → “Yeniden başlat” dediğinde ya da uygulamayı kapattığında kurulur.</p></details>
+      <details><summary>Hesap bilgilerim nereye gidiyor?</summary><p>Hiçbir yere. Cookie’ler ve şifreler sadece senin bilgisayarında, Windows’un kendi şifrelemesiyle saklanır.</p></details>
+      <details><summary>Hangi Windows sürümlerinde çalışır?</summary><p>Windows 10 ve Windows 11 (64 bit).</p></details>
+    </section>
+
+    <footer>Anime Universal X · <a id="allReleases" href="https://github.com/Bekir18ari/anime-universal-x/releases">Tüm sürümler</a></footer>
+  </div>
+
+<script>
+  // Latest version, size and notes straight from GitHub Releases.
+  (async () => {
+    const meta = document.getElementById('meta');
+    try {
+      const r = await fetch('https://api.github.com/repos/Bekir18ari/anime-universal-x/releases/latest', { headers: { Accept: 'application/vnd.github+json' } });
+      if (!r.ok) throw new Error(r.status);
+      const rel = await r.json();
+      const zip = (rel.assets || []).find((a) => a.name === 'AnimeUniversalX-Windows.zip');
+      const version = String(rel.tag_name || '').replace(/^v/, '');
+      const date = new Date(rel.published_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+      meta.innerHTML = '';
+      const b = document.createElement('b'); b.textContent = 'Sürüm ' + version;
+      meta.append(b, ` · ${date}` + (zip ? ` · ${Math.round(zip.size / 1e6)} MB` : '') + ' · Windows 10/11');
+      if (zip) document.getElementById('dl').href = zip.browser_download_url;
+      if (rel.body && rel.body.trim() && rel.body.trim() !== 'Sürüm ' + version) {
+        document.getElementById('notesTitle').textContent = 'Sürüm ' + version;
+        document.getElementById('notes').textContent = rel.body.trim();
+        document.getElementById('notesBox').hidden = false;
+      }
+    } catch {
+      meta.textContent = 'Windows 10/11 · ücretsiz';
+    }
+  })();
+</script>
+</body>
+</html>
